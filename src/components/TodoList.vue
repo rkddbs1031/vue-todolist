@@ -18,9 +18,10 @@
 <script>
 export default {
   name: "TodoList",
-  data: () => ({
-    lists: {},
-  }),
+  props: {
+    lists: Array,
+  },
+  data: () => ({}),
   created() {
     this.test();
   },

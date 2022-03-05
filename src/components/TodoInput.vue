@@ -18,7 +18,7 @@ export default {
   methods: {
     addTodo() {
       let value = this.newTodo && this.newTodo.trim();
-      localStorage.setItem("todo", value);
+      this.$emit("addTodo", value);
       this.clearBox();
     },
     clearBox() {
