@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <TodoHeader />
+    <TodoHeader :msg="msg" />
     <TodoInput />
     <TodoList />
   </div>
@@ -18,5 +18,8 @@ export default {
     TodoInput,
     TodoList,
   },
+  data: () => ({
+    msg: "Todo List",
+  }),
 };
 </script>
