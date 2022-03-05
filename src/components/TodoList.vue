@@ -4,10 +4,14 @@
       <li v-for="(item, idx) in lists" :key="idx">
         <span>{{ item }}</span>
         <div class="btn">
-          <button type="button" class="removeBtn" @click="removeTodo">
+          <button
+            type="button"
+            class="removeBtn"
+            @click="removeTodo(item, idx)"
+          >
             ❌
           </button>
-          <button type="button" class="removeBtn" @click="removeTodo">
+          <button type="button" class="removeBtn" @click="modifyTodo">
             ✍
           </button>
         </div>
@@ -22,13 +26,12 @@ export default {
     lists: Array,
   },
   data: () => ({}),
-  created() {
-    this.test();
-  },
+  created() {},
   methods: {
-    test() {
-      console.log(this.lists);
+    removeTodo(item, idx) {
+      this.$emit("removeTodo", item, idx);
     },
+    modifyTodo() {},
   },
 };
 </script>

@@ -2,7 +2,7 @@
   <div class="home">
     <TodoHeader :msg="msg" />
     <TodoInput @addTodo="addTodo" />
-    <TodoList :lists="lists" />
+    <TodoList :lists="lists" @removeTodo="removeTodo" />
   </div>
 </template>
 
@@ -31,14 +31,12 @@ export default {
   },
   methods: {
     addTodo(item) {
-      let idx;
-      if (localStorage.length < 1) {
-        idx = 1;
-      } else {
-        idx = localStorage.length + 1;
-      }
-      localStorage.setItem(idx, item);
+      localStorage.setItem(item, item);
       this.lists.push(item);
+    },
+    removeTodo(item, idx) {
+      localStorage.removeItem(item);
+      this.lists.splice(idx, 1);
     },
   },
 };
