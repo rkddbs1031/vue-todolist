@@ -11,9 +11,6 @@
           >
             ❌
           </button>
-          <button type="button" class="removeBtn" @click="modifyTodo">
-            ✍
-          </button>
         </div>
       </li>
     </ul>
@@ -31,7 +28,6 @@ export default {
     removeTodo(item, idx) {
       this.$emit("removeTodo", item, idx);
     },
-    modifyTodo() {},
   },
 };
 </script>
